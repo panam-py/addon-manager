@@ -15,11 +15,12 @@ export class UserService {
     return this.modelClass.query().findById(id);
   }
 
+  findByUsername(username: string) {
+    return this.modelClass.query().where({ username }).first();
+  }
+
   async create(props: Partial<UserModel>) {
-    const existingUser = await this.modelClass
-      .query()
-      .where({ username: props.username })
-      .first();
+    const existingUser = await this.findByUsername(props.username);
 
     if (existingUser)
       throw new HttpException(
