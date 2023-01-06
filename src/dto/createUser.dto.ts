@@ -1,4 +1,5 @@
 import { IsNotEmpty, MinLength, IsIn } from 'class-validator';
+import { Role } from 'src/types';
 
 export class CreateUserDto {
   @MinLength(3)
@@ -11,5 +12,5 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @IsIn(['user', 'admin'])
-  role: string;
+  role: Role;
 }
