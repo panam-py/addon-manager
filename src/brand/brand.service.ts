@@ -28,9 +28,10 @@ export class BrandService {
     return this.modelClass.query().delete().where({ id }).first();
   }
 
-  //   addCategory(id: number, newCategory: string) {
-  //     const brand = this.findOne(id);
-  //     brand.
-  //     return this.modelClass.query().patch({categories: })
-  //   }
+  async addCategory(id: number, newCategories: string[]) {
+    const brand = await this.findOne(id);
+    if (!brand) return null;
+    const categories = [...brand.categories, ...newCategories];
+    return this.update(id, { categories });
+  }
 }

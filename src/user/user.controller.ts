@@ -2,6 +2,8 @@ import {
   Body,
   Controller,
   Get,
+  HttpException,
+  HttpStatus,
   Param,
   ParseIntPipe,
   Post,
@@ -16,12 +18,21 @@ export class UserController {
 
   @Get()
   async findAll() {
-    return this.userService.findAll();
+    const users = await this.userService.findAll();
+    users.map((user) => (user.password = undefined));
+    return users;
   }
 
-  @Get(':id')
+  @Get('/:id')
   async findOne(@Param('id', new ParseIntPipe()) id: number) {
     const user = await this.userService.findOne(id);
+    if (!user)
+      throw new HttpException(
+        'No user found with that id',
+        HttpStatus.NOT_FOUND,
+      );
+
+    user.password = undefined;
     return user;
   }
 
