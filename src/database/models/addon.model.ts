@@ -11,16 +11,4 @@ export class AddonModel extends BaseModel {
   description: string;
   price: number;
   category: string;
-  brand: BrandModel;
-
-  static relationMappings = {
-    brand: {
-      modelClass: `${__dirname}/brand.model`,
-      relation: Model.BelongsToOneRelation,
-      join: {
-        from: 'addons.brandId',
-        to: 'brands.id',
-      },
-    },
-  };
 }
