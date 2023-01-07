@@ -1,10 +1,11 @@
 import { Global, Module } from '@nestjs/common';
-import { AddonController } from './addon.controller';
+// import { BrandModule } from '../brand/brand.module';
 import { AddonService } from './addon.service';
 
 @Global()
 @Module({
-  controllers: [AddonController],
+  // imports: [BrandModule],
   providers: [AddonService],
+  exports: [AddonService],
 })
 export class AddonModule {}

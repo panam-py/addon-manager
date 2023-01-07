@@ -1,7 +1,6 @@
-import { IsArray, ArrayMinSize } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class AddBrandCategoryDto {
-  @IsArray()
-  @ArrayMinSize(1)
-  categories: string[];
+  @IsNotEmpty()
+  name: string;
 }

@@ -28,10 +28,11 @@ export class BrandService {
     return this.modelClass.query().delete().where({ id }).first();
   }
 
-  async addCategory(id: number, newCategories: string[]) {
+  async addCategory(id: number, newCategory: string) {
     const brand = await this.findOne(id);
     if (!brand) return null;
-    const categories = [...brand.categories, ...newCategories];
+    const categories = brand.categories;
+    categories.push(newCategory);
     return this.update(id, { categories });
   }
 }
