@@ -13,7 +13,6 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { IsRole } from 'src/auth/is-role.decorator';
-import { AuthGuard } from '@nestjs/passport';
 import { RolesGuard } from 'src/auth/roles.guard';
 import { BrandService } from './brand.service';
 import { BrandModel } from 'src/database/models/brand.model';
@@ -23,9 +22,10 @@ import { CreateAddonDto } from 'src/dto/createAddon.dto';
 import { AddonModel } from 'src/database/models/addon.model';
 import { AddonService } from 'src/addon/addon.service';
 import { UpdateAddonDto } from 'src/dto/updateAddon.dto';
+import { CustomAuthGuard } from 'src/auth/custom-auth.guard';
 
 @IsRole('admin')
-@UseGuards(AuthGuard('jwt'), RolesGuard)
+@UseGuards(new CustomAuthGuard('jwt'), RolesGuard)
 @Controller('brands')
 export class BrandController {
   constructor(
