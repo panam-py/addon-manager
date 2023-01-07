@@ -12,17 +12,17 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
-import { IsRole } from 'src/auth/is-role.decorator';
-import { RolesGuard } from 'src/auth/roles.guard';
+import { IsRole } from '../auth/is-role.decorator';
+import { RolesGuard } from '../auth/roles.guard';
 import { BrandService } from './brand.service';
-import { BrandModel } from 'src/database/models/brand.model';
-import { CreateBrandDto } from 'src/dto/createBrand.dto';
-import { AddBrandCategoryDto } from 'src/dto/addBrandCategory.dto';
-import { CreateAddonDto } from 'src/dto/createAddon.dto';
-import { AddonModel } from 'src/database/models/addon.model';
-import { AddonService } from 'src/addon/addon.service';
-import { UpdateAddonDto } from 'src/dto/updateAddon.dto';
-import { CustomAuthGuard } from 'src/auth/custom-auth.guard';
+import { BrandModel } from '../database/models/brand.model';
+import { CreateBrandDto } from '../dto/createBrand.dto';
+import { AddBrandCategoryDto } from '../dto/addBrandCategory.dto';
+import { CreateAddonDto } from '../dto/createAddon.dto';
+import { AddonModel } from '../database/models/addon.model';
+import { AddonService } from '../addon/addon.service';
+import { UpdateAddonDto } from '../dto/updateAddon.dto';
+import { CustomAuthGuard } from '../auth/custom-auth.guard';
 
 @IsRole('admin')
 @UseGuards(new CustomAuthGuard('jwt'), RolesGuard)

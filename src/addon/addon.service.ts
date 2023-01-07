@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { ModelClass } from 'objection';
-import { BrandService } from 'src/brand/brand.service';
-import { AddonModel } from 'src/database/models/addon.model';
+import { BrandService } from '../brand/brand.service';
+import { AddonModel } from '../database/models/addon.model';
 
 @Injectable()
 export class AddonService {

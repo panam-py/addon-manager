@@ -8,7 +8,7 @@ import {
   ParseIntPipe,
   Post,
 } from '@nestjs/common';
-import { CreateUserDto } from 'src/dto/createUser.dto';
+import { CreateUserDto } from '../dto/createUser.dto';
 // import { UserModel } from 'src/database/models/user.model';
 import { UserService } from './user.service';
 
