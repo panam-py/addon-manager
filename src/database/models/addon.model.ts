@@ -1,6 +1,4 @@
-import { Model } from 'objection';
 import { BaseModel } from './base.model';
-import { BrandModel } from './brand.model';
 
 export class AddonModel extends BaseModel {
   static tableName = 'addons';
