@@ -4,7 +4,7 @@ const tableName = 'addons';
 
 export async function up(knex: Knex.Knex) {
   return knex.schema.alterTable(tableName, (t) => {
-    t.text('category');
+    t.dropColumn('category');
   });
 }
 

@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   HttpException,
   HttpStatus,
   Param,
@@ -107,6 +108,7 @@ export class BrandController {
   }
 
   @Delete('/:brandId/addons/:addonId')
+  @HttpCode(204)
   async deleteAddon(@Param('addonId', new ParseIntPipe()) addonId: number) {
     await this.addonService.delete(addonId);
   }

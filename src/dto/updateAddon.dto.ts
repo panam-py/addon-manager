@@ -1,4 +1,4 @@
-import { IsNumber } from 'class-validator';
+import { IsNumber, IsOptional } from 'class-validator';
 
 export class UpdateAddonDto {
   name: string;
@@ -6,6 +6,7 @@ export class UpdateAddonDto {
   description?: string;
 
   @IsNumber()
+  @IsOptional()
   price: number;
 
   category?: string;

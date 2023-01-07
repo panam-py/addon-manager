@@ -58,9 +58,9 @@ export class AddonService {
         `Brand ${brand.name} has no category called ${props.category}`,
         HttpStatus.FORBIDDEN,
       );
-    const addon = await this.findOneBrandAddon(brandId, addonId).patchAndFetch(
-      props,
-    );
+    const addon = await this.modelClass
+      .query()
+      .patchAndFetchById(addonId, props);
     if (!addon) return null;
     return addon;
   }
