@@ -9,4 +9,4 @@ This is a test application/assignment for a technical role that mocks the functi
 * Run the code with ``yarn run start``
 
 ## Usage
-In case you don't want to run the application locally the code is hosted on vercel with [this url] (https://https://addon-manager.vercel.app), you can follow through with the [API collection on Postman](https://documenter.getpostman.com/view/17243864/2s8Z75SpYp) to see the usage of the various enpoints.
+In case you don't want to run the application locally the code is hosted on vercel with [this url](https://https://addon-manager.vercel.app), you can follow through with the [API collection on Postman](https://documenter.getpostman.com/view/17243864/2s8Z75SpYp) to see the usage of the various enpoints.
